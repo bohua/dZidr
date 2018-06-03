@@ -1,0 +1,127 @@
+body {
+  overflow-y: hidden;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+a {
+  color: #00B7FF;
+}
+.logo-text {
+  color: #ffffff;
+  text-align: center;
+}
+.page {
+  height: 100%;
+  overflow: hidden;
+  background: white;
+}
+.page.with-bg {
+  background-image: url(../images/bg.jpg);
+  background-size: cover;
+}
+#login .login-form {
+  padding: 20px 50px 50px 50px;
+  height: 240px;
+  background-image: url(../images/bg.jpg);
+  background-size: cover;
+  overflow: visible;
+  border-bottom: 1px solid #e8e8e8;
+}
+#login .login-form input {
+  background: white;
+  line-height: 30px;
+  text-align: center;
+}
+#login .login-form .login-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  text-shadow: none;
+  border: 1px solid white;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+#login .external-login-form {
+  padding: 50px 50px 20px 50px;
+}
+#login .external-login-form button {
+  text-shadow: none;
+  color: #ffffff;
+  border-radius: 10px;
+  font-weight: normal;
+}
+#login .external-login-form .facebook-login-btn {
+  background: #5D85C1;
+}
+#login .external-login-form .twitter-login-btn {
+  background: #00B7FF;
+}
+#login .login-footer {
+  text-align: center;
+  color: #777777;
+}
+#login .login-footer .create-account-link {
+  border-bottom: 1px solid #e8e8e8;
+  padding-bottom: 20px;
+}
+#login .logo-img {
+  width: 100%;
+  border-bottom: 1px solid #34246B;
+  box-shadow: 0 1px 5px;
+  margin-bottom: -5px;
+}
+#login .split-btn-wrapper {
+  text-align: center;
+  background: none;
+  position: relative;
+}
+#login .split-btn-wrapper .split-btn {
+  font-size: 40px;
+  margin: 20px 0;
+}
+#select-spot .spot-list > li > a {
+  background: #ffffff;
+}
+#select-spot .spot-list > li > a > img {
+  width: 60px;
+  margin: 10px;
+}
+#select-spot .add-new-spot-btn {
+  text-align: center;
+}
+#select-spot .add-new-spot-btn > a {
+  font-size: 40px;
+  background: rgba(255, 255, 255, 0.6);
+}
+.page-footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+.page-footer a {
+  background-color: #333333!important;
+}
+.page-footer a.ui-btn-active {
+  background-color: #999999!important;
+}
+.page-header {
+  height: 50px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5) !important;
+}
+.page-header .right-btn-group {
+  margin-top: 3px;
+}
+.page-header .right-btn-group > a {
+  margin-left: 10px;
+}
+.page-header .head-bar-btn {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 20px;
+}
+.page-header .head-bar-btn:after {
+  margin-left: -18px;
+  margin-top: -18px;
+  width: 35px;
+  height: 35px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
