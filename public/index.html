@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
 
     <!-- iPad (Retina) ICON-->
     <link href="images/144.png" sizes="144x144" rel="apple-touch-icon">
 
 
-    <link rel="stylesheet" href="lib/css/jquery.mobile-1.4.5.min.css"/>
-    <link rel='stylesheet' href='css/dZidr.css'/>
+    <link rel="stylesheet" href="lib/css/jquery.mobile-1.4.5.min.css" />
+    <link rel='stylesheet' href='css/dZidr.css' />
 
     <script src="lib/js/jquery-2.1.4.min.js"></script>
     <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
@@ -74,7 +75,8 @@
             border-radius: 4px;
         }
 
-        #message, #message a {
+        #message,
+        #message a {
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
         }
 
@@ -85,7 +87,8 @@
         }
 
         @media (max-width: 600px) {
-            body, #message {
+            body,
+            #message {
                 margin-top: 0;
                 background: white;
                 box-shadow: none;
@@ -99,90 +102,144 @@
 </head>
 
 <body>
-<div data-role="page" id="login" class="page">
+    <div data-role="page" id="login" class="page">
 
-    <div role="main" class="ui-content login-form">
-        <h1 class="logo-text">SPOT'N RATE</h1>
+        <div role="main" class="ui-content login-form">
+            <h1 class="logo-text">SPOT'N RATE</h1>
 
-        <input type="text" name="username" id="username" value="" placeholder="@User Name">
-        <input type="password" name="password" id="password" value="" autocomplete="off" placeholder="Password">
-        <a href="#select-spot" class="ui-btn login-btn">Login</a>
+            <input type="text" name="username" id="username" value="" placeholder="@User Name">
+            <input type="password" name="password" id="password" value="" autocomplete="off" placeholder="Password">
+            <a href="#select-spot" class="ui-btn login-btn">Login</a>
 
-        <div class="ui-nodisc-icon ui-alt-icon split-btn-wrapper"><!-- Classes added to the wrapper -->
-             <a class="ui-btn ui-corner-all ui-icon-carat-d ui-btn-icon-notext ui-btn-inline split-btn"></a>
+            <div class="ui-nodisc-icon ui-alt-icon split-btn-wrapper">
+                <!-- Classes added to the wrapper -->
+            
+                <a class="ui-btn ui-corner-all ui-icon-carat-d ui-btn-icon-notext ui-btn-inline split-btn"></a>
+            </div>
         </div>
-    </div><!-- /content -->
+        <!-- /content -->
 
-    <div role="second" class="ui-content external-login-form">
-        <button class="ui-btn facebook-login-btn">Login with Facebook</button>
-        <button class="ui-btn twitter-login-btn">Login with Twitter</button>
-    </div>
-
-    <div role="footer" class="ui-content login-footer">
-        <p class="create-account-link">Create an account</p>
-        <small class="forget-password-link">Forget password?</small>
-    </div>
-</div>
-
-<div data-role="page" id="select-spot" class="page with-bg">
-
-    <div role="main" class="ui-content">
-        <h1 class="logo-text">SPOT'N RATE</h1>
-        <ul class="spot-list">
-        </ul>
-
-        <div class="ui-nodisc-icon ui-alt-icon split-btn-wrapper add-new-spot-btn">
-            <!-- Classes added to the wrapper -->
-             <a class="ui-btn ui-corner-all ui-icon-plus ui-btn-icon-notext ui-btn-inline split-btn"></a>
+        <div role="second" class="ui-content external-login-form">
+            <button class="ui-btn facebook-login-btn">Login with Facebook</button>
+            <button class="ui-btn twitter-login-btn">Login with Twitter</button>
         </div>
-    </div><!-- /content -->
-</div>
 
-<div data-role="page" id="spot-list" class="page with-bg">
-    <div data-role="header" class="page-header">
-        <a class="ui-btn ui-btn-left ui-corner-all ui-icon-bars ui-btn-icon-notext ui-btn-inline head-bar-btn"></a>
-        <div class="ui-btn-right right-btn-group">
-            <a class="ui-btn ui-corner-all ui-icon-gear ui-btn-icon-notext ui-btn-inline head-bar-btn"></a>
-            <a class="ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext ui-btn-inline head-bar-btn"></a>
+        <div role="footer" class="ui-content login-footer">
+            <p class="create-account-link">Create an account</p>
+            <small class="forget-password-link">Forget password?</small>
         </div>
     </div>
 
-    <div role="main" class="ui-content">
-    </div><!-- /content -->
+    <div data-role="page" id="select-spot" class="page with-bg">
 
-        
-    <div data-role="footer" class="page-footer">
-        <div data-role="navbar" data-iconpos="bottom">
-            <ul>
-                <li><a href="#" data-icon="eye"></a></li>
-                <li><a href="#" data-icon="plus"></a></li>
-                <li><a href="#" data-icon="bullets"></a></li>
+        <div role="main" class="ui-content">
+            <h1 class="logo-text">SPOT'N RATE</h1>
+            <ul class="spot-list">
+            </ul>
+
+            <div class="ui-nodisc-icon ui-alt-icon split-btn-wrapper add-new-spot-btn">
+                <!-- Classes added to the wrapper -->
+            
+                <a class="ui-btn ui-corner-all ui-icon-plus ui-btn-icon-notext ui-btn-inline split-btn"></a>
+            </div>
+        </div>
+        <!-- /content -->
+    </div>
+
+    <div data-role="page" id="horse-list" class="page with-bg">
+        <div data-role="panel" id="navPanel">
+            <h2>Filter</h2>
+            <form class="ui-filterable">
+                    <input id="horseFilter" data-type="search">
+                </form>
+                    <form method="post" action="demoform.asp">
+                            <fieldset>
+                              <label for="sex">Sex:</label>
+                              <select name="sex" id="sex" multiple="multiple" data-native-menu="false">
+                                <option></option>
+                                <option value="gelding">Gelding</option>
+                                <option value="mare">Mare</option>
+                                <option value="stallion">Stallion</option>
+                              </select>
+                              <label for="age">Age:</label>
+                              <select name="age" id="age" multiple="multiple" data-native-manu="false">
+                                <option></option>
+                                <option value="4 years">4 years</option>
+                                <option value="5 years">5 years</option>
+                                <option value="6 years">6 years</option>
+                                <option value="7 years">7 years</option>
+                                <option value="8-10 years">8-10 years</option>
+                                <option value="11+ years">11+ years</option>
+                              </select>
+                              <select name="F" id="F" multiple="multiple" data-native-manu="false">
+                                    <option></option>
+                                    
+                                  </select>
+                              
+                            </fieldset>
+                            <input type="submit" data-inline="true" value="Submit">
+                          </form>
+            
+            <p>You can close the panel by clicking outside the panel, pressing the Esc key or by swiping.</p>
+        </div>
+        <div data-role="header" class="page-header">
+            <a href="#navPanel"  class="ui-btn ui-btn-left ui-corner-all ui-icon-bars ui-btn-icon-notext ui-btn-inline head-bar-btn"></a>
+            <div class="ui-btn-right right-btn-group">
+                <a class="ui-btn ui-corner-all ui-icon-gear ui-btn-icon-notext ui-btn-inline head-bar-btn"></a>
+                <a class="ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext ui-btn-inline head-bar-btn"></a>
+            </div>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <ul class="horse-list" data-filter="true" data-input="#horseFilter" >
+
             </ul>
         </div>
+        <!-- /content -->
+
+    
+        <div data-role="footer" class="page-footer">
+            <div data-role="navbar" data-iconpos="bottom">
+                <ul>
+                    <li>
+                        <a href="#" data-icon="eye"></a>
+                    </li>
+                    <li>
+                        <a href="#" data-icon="plus"></a>
+                    </li>
+                    <li>
+                        <a href="#" data-icon="bullets"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
-</div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
 
-        try {
-            let app = firebase.app();
-            let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
 
-        } catch (e) {
-            console.error(e);
-        }
-    });
-</script>
-<script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+            // // The Firebase SDK is initialized and available here!
+            //
+            // firebase.auth().onAuthStateChanged(user => { });
+            // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+            // firebase.messaging().requestPermission().then(() => { });
+            // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+            //
+            // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+            try {
+                let app = firebase.app();
+                let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[
+                    feature] === 'function');
+
+            } catch (e) {
+                console.error(e);
+            }
+        });
+    </script>
+    <script src="js/app.js"></script>
 </body>
+
 </html>

@@ -19,6 +19,10 @@
         "function": "getSpotList"
       },
       {
+        "source": "/getHorseList",
+        "function": "getHorseList"
+      },
+      {
         "source": "/",
         "destination": "/index.html"
       }

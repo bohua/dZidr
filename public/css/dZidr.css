@@ -17,6 +17,7 @@ a {
 .page.with-bg {
   background-image: url(../images/bg.jpg);
   background-size: cover;
+  z-index:0;
 }
 #login .login-form {
   padding: 20px 50px 50px 50px;
@@ -92,6 +93,8 @@ a {
   background: rgba(255, 255, 255, 0.6);
 }
 .page-footer {
+  overflow:hidden;
+  z-index:30000;
   position: absolute;
   width: 100%;
   bottom: 0;
@@ -105,8 +108,15 @@ a {
 .page-header {
   height: 50px;
   width: 100%;
+  background-image: url(../images/bg.jpg);
+  opacity: 0.5;
+  filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+#navPanel{
   background-color: rgba(255, 255, 255, 0.5) !important;
 }
+
 .page-header .right-btn-group {
   margin-top: 3px;
 }
@@ -124,4 +134,21 @@ a {
   width: 35px;
   height: 35px;
   background-color: rgba(0, 0, 0, 0.6);
+}
+
+.ui-content{
+  overflow: scroll;
+}
+
+.card .img-card{
+  
+  width: auto;  
+  height: auto;  
+  max-width: 15em !important;  
+  max-height: 6em !important;  
+
+}
+
+option{
+  font-size:10px;
 }
