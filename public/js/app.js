@@ -45,6 +45,8 @@ $("#horse-list").on("pagebeforeshow", function (event) {
     let horseListView = $('.horse-list');
 
     if (!horseListView.hasClass('ui-listview')) {
+        loadingMask('#horse-list .ui-content', true);
+
         firestore.collection("horses").get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
                 let item = doc.data();
@@ -68,6 +70,8 @@ $("#horse-list").on("pagebeforeshow", function (event) {
 
             horseListView.listview();
             $("input[data-role='flipswitch']").flipswitch();
+
+            loadingMask('#horse-list .ui-content', false);
         });
 
         // $.ajax({
@@ -98,5 +102,13 @@ $("#horse-list").on("pagebeforeshow", function (event) {
     }
 });
 
+function loadingMask(container, switcher){
+    if(switcher){
+        $(container).append('<div class="dzidr-mask"><div class="loader"></div></div>');
+    }
 
+    else {
+        $('.dzidr-mask').remove();
+    }
+}
 
