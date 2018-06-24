@@ -23,6 +23,10 @@
         "function": "getHorseList"
       },
       {
+        "source": "/initDb",
+        "destination": "/initDb.html"
+      },
+      {
         "source": "/",
         "destination": "/index.html"
       }

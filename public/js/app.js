@@ -1,3 +1,19 @@
+// Initialize Firebase
+var config = {
+    apiKey: "AIzaSyBZ_sO2xunjRfsAjizC00YL-cmzyNH7ySY",
+    authDomain: "spot-2c63e.firebaseapp.com",
+    databaseURL: "https://spot-2c63e.firebaseio.com",
+    projectId: "spot-2c63e",
+    storageBucket: "spot-2c63e.appspot.com",
+    messagingSenderId: "47936778003"
+};
+firebase.initializeApp(config);
+
+// Initialize Cloud Firestore through Firebase
+var firestore = firebase.firestore();
+const settings = {/* your settings... */ timestampsInSnapshots: true};
+firestore.settings(settings);
+
 $("#select-spot").on("pagebeforeshow", function (event) {
     let spotListView = $('.spot-list');
 
@@ -29,11 +45,10 @@ $("#horse-list").on("pagebeforeshow", function (event) {
     let horseListView = $('.horse-list');
 
     if (!horseListView.hasClass('ui-listview')) {
-        $.ajax({
-            url: "getHorseList"
-        }).done((data) => {
-            console.log(data);
-            for (let item of data) {
+        firestore.collection("horses").get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                let item = doc.data();
+
                 $(`<li class="card ui-grid-a">
                 <div class="ui-block-a">
                 <img class="img-card" src="${item.img}">
@@ -44,16 +59,42 @@ $("#horse-list").on("pagebeforeshow", function (event) {
                 <p>${item.sex}</p>
                 <p>${item.age}</p>
                 <form method="post" action="demoform.asp">
-        <input type="checkbox" data-role="flipswitch" name="switch"  data-on-text="True" data-off-text="False">
-        <br>
-    </form>
+                    <input type="checkbox" data-role="flipswitch" name="switch"  data-on-text="True" data-off-text="False">
+                    <br>
+                </form>
                 </div>
                </li>`).appendTo(horseListView);
-            }
+            });
 
             horseListView.listview();
             $("input[data-role='flipswitch']").flipswitch();
         });
+
+        // $.ajax({
+        //     url: "getHorseList"
+        // }).done((data) => {
+        //     console.log(data);
+        //     for (let item of data) {
+        //         $(`<li class="card ui-grid-a">
+        //         <div class="ui-block-a">
+        //         <img class="img-card" src="${item.img}">
+        //         </div>
+        //         <div class=" ui-block-b">
+        //         <h2>${item.name}</h2>
+        //         <p>${item.F} / ${item.MF}</p>
+        //         <p>${item.sex}</p>
+        //         <p>${item.age}</p>
+        //         <form method="post" action="demoform.asp">
+        //             <input type="checkbox" data-role="flipswitch" name="switch"  data-on-text="True" data-off-text="False">
+        //             <br>
+        //         </form>
+        //         </div>
+        //        </li>`).appendTo(horseListView);
+        //     }
+        //
+        //     horseListView.listview();
+        //     $("input[data-role='flipswitch']").flipswitch();
+        // });
     }
 });
 
