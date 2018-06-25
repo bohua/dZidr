@@ -164,7 +164,7 @@
                             </fieldset>
                             <fieldset>
                               <label for="age">Age:</label>
-                              <select name="age" id="age" multiple="multiple" data-native-manu="false">
+                              <select name="age" id="age" multiple="multiple" data-native-menu="false">
                                 <option></option>
                                 <option value="4 years">4 years</option>
                                 <option value="5 years">5 years</option>
@@ -175,16 +175,16 @@
                               </select>
                             </fieldset>
                             <fieldset>
-                              <select name="F" id="F" multiple="multiple" data-native-manu="false">
-                                    <option></option>
-                                    
+                                <label for="pedigree">Pedigree:</label>
+                              <select name="pedigree-F" id="pedigree-F">
                                   </select>
+                                  <select name="pedigree-MF" id="pedigree-MF"> 
+                                    </select>
                                 </fieldset>
-                            
                             <input type="submit" data-inline="true" value="Submit">
                           </form>
             
-            <p>You can close the panel by clicking outside the panel, pressing the Esc key or by swiping.</p>
+            
         </div>
         <div data-role="header" class="page-header">
             <a href="#navPanel"  class="ui-btn ui-btn-left ui-corner-all ui-icon-bars ui-btn-icon-notext ui-btn-inline head-bar-btn"></a>
@@ -219,6 +219,54 @@
         </div>
     </div>
 
+    <div data-role="page" id="rating" class="page with-bg">
+        <div id="rating-page"></div>
+        <div id="rating-slider">
+                <div class="ui-field-contain">
+                    <label for="sex">Sex:</label>
+                    <input type="range" name="sex" class="slider" id="sex" min="0" max="5" data-highlight="true" value="1">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="pedigree">Pedigree:</label>
+                    <input type="range" name="pedigree" class="slider" id="pedigree" min="0" max="5" data-highlight="true">
+                </div>
+                <div class="ui-field-contain">
+                    <label for="age">Age:</label>
+                    <input type="range" name="age" class="slider" id="age" min="0" max="5" data-highlight="true" >
+                </div>
+                <div class="ui-field-contain">
+                    <label for="color">Color:</label>
+                    <input type="range" name="color" class="slider" id="color" min="0" max="5" data-highlight="true" >
+                </div>
+                <div class="ui-field-contain">
+                    <label for="height">Height:</label>
+                    <input type="range" name="height" class="slider" id="height" min="0" max="5" data-highlight="true" >
+                </div>
+                <div class="ui-field-contain">
+                    <label for="rideability">Rideability:</label>
+                    <input type="range" name="rideability" class="slider" id="rideability" min="0" max="5" data-highlight="true" >
+                </div>
+                <div class="ui-field-contain">
+                    <label for="walk">Walk:</label>
+                    <input type="range" name="walk" class="slider" id="walk" min="0" max="5" data-highlight="true" >
+                </div>
+                <div class="ui-field-contain">
+                    <label for="trot">Trot:</label>
+                    <input type="range" name="trot" class="slider" id="trot" min="0" max="5" data-highlight="true" >
+                </div>
+                <div class="ui-field-contain">
+                    <label for="canter">Canter:</label>
+                    <input type="range" name="canter" class="slider" id="canter" min="0" max="5" data-highlight="true" >
+                </div>
+            </div>
+
+       
+        <div>
+             <label for="notes">Notes:</label>
+            <textarea name="notes" id="notes"></textarea>
+        </div>
+        
+    </div>
 
 
     <script>

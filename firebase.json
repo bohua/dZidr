@@ -23,6 +23,10 @@
         "function": "getHorseList"
       },
       {
+        "source":"/getOneHorse",
+        "function":"getOneHorse"
+      },
+      {
         "source": "/",
         "destination": "/index.html"
       }
