@@ -18,14 +18,8 @@
     <title>Welcome to Firebase Hosting</title>
 
     <!-- update the version number as needed -->
-    <script defer src="/__/firebase/5.0.3/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/5.0.3/firebase-auth.js"></script>
-    <script defer src="/__/firebase/5.0.3/firebase-database.js"></script>
-    <script defer src="/__/firebase/5.0.3/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/5.0.3/firebase-storage.js"></script>
-    <!-- initialize the SDK after all desired features are loaded -->
-    <script defer src="/__/firebase/init.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-firestore.js"></script>
 
     <style media="screen">
         body {
@@ -105,15 +99,15 @@
     <div data-role="page" id="login" class="page">
 
         <div role="main" class="ui-content login-form">
-            <h1 class="logo-text">SPOT'N RATE</h1>
+            <h1 class="logo-text">DZIDR</h1>
 
             <input type="text" name="username" id="username" value="" placeholder="@User Name">
             <input type="password" name="password" id="password" value="" autocomplete="off" placeholder="Password">
-            <a href="#select-spot" class="ui-btn login-btn">Login</a>
+            <a href="#get-code" class="ui-btn login-btn">Login</a>
 
             <div class="ui-nodisc-icon ui-alt-icon split-btn-wrapper">
                 <!-- Classes added to the wrapper -->
-            
+
                 <a class="ui-btn ui-corner-all ui-icon-carat-d ui-btn-icon-notext ui-btn-inline split-btn"></a>
             </div>
         </div>
@@ -130,23 +124,25 @@
         </div>
     </div>
 
-    <div data-role="page" id="select-spot" class="page with-bg">
+    <div data-role="page" id="get-code" class="page with-bg">
 
         <div role="main" class="ui-content">
-            <h1 class="logo-text">SPOT'N RATE</h1>
+            <h1 class="logo-text">DZIDR</h1>
             <ul class="spot-list">
             </ul>
 
             <div class="ui-nodisc-icon ui-alt-icon split-btn-wrapper add-new-spot-btn">
                 <!-- Classes added to the wrapper -->
-            
-                <a class="ui-btn ui-corner-all ui-icon-plus ui-btn-icon-notext ui-btn-inline split-btn"></a>
+
+                <input type="text" name="username" id="list-code" value="" placeholder="List Code">
+                <a href="#horse-list" class="ui-btn login-btn">Login</a>
             </div>
         </div>
         <!-- /content -->
     </div>
 
     <div data-role="page" id="horse-list" class="page with-bg">
+
         <div data-role="panel" id="navPanel">
             <h2>Filter</h2>
             <form class="ui-filterable">

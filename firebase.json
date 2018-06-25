@@ -23,8 +23,8 @@
         "function": "getHorseList"
       },
       {
-        "source":"/getOneHorse",
-        "function":"getOneHorse"
+        "source": "/initDb",
+        "destination": "/initDb.html"
       },
       {
         "source": "/",
