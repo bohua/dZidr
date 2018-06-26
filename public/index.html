@@ -3,291 +3,454 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="minimal-ui, width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
 
     <!-- iPad (Retina) ICON-->
     <link href="images/144.png" sizes="144x144" rel="apple-touch-icon">
 
 
-    <link rel="stylesheet" href="lib/css/jquery.mobile-1.4.5.min.css" />
-    <link rel='stylesheet' href='css/dZidr.css' />
+    <link rel="stylesheet" href="lib/css/jquery.mobile-1.4.5.min.css"/>
+    <link rel='stylesheet' href='css/dZidr.css'/>
+    <link rel='stylesheet' href='css/ribbon.css'/>
 
     <script src="lib/js/jquery-2.1.4.min.js"></script>
     <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
-    <title>Welcome to Firebase Hosting</title>
+    <title>Dzider</title>
 
     <!-- update the version number as needed -->
     <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-firestore.js"></script>
 
-    <style media="screen">
-        body {
-            background: #ECEFF1;
-            color: rgba(0, 0, 0, 0.87);
-            font-family: Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
 
-        #message {
-            background: white;
-            max-width: 360px;
-            margin: 100px auto 16px;
-            padding: 32px 24px;
-            border-radius: 3px;
-        }
+    <!--<style media="screen">-->
+    <!--body {-->
+    <!--background: #ECEFF1;-->
+    <!--color: rgba(0, 0, 0, 0.87);-->
+    <!--font-family: Roboto, Helvetica, Arial, sans-serif;-->
+    <!--margin: 0;-->
+    <!--padding: 0;-->
+    <!--}-->
 
-        #message h2 {
-            color: #ffa100;
-            font-weight: bold;
-            font-size: 16px;
-            margin: 0 0 8px;
-        }
+    <!--#message {-->
+    <!--background: white;-->
+    <!--max-width: 360px;-->
+    <!--margin: 100px auto 16px;-->
+    <!--padding: 32px 24px;-->
+    <!--border-radius: 3px;-->
+    <!--}-->
 
-        #message h1 {
-            font-size: 22px;
-            font-weight: 300;
-            color: rgba(0, 0, 0, 0.6);
-            margin: 0 0 16px;
-        }
+    <!--#message h2 {-->
+    <!--color: #ffa100;-->
+    <!--font-weight: bold;-->
+    <!--font-size: 16px;-->
+    <!--margin: 0 0 8px;-->
+    <!--}-->
 
-        #message p {
-            line-height: 140%;
-            margin: 16px 0 24px;
-            font-size: 14px;
-        }
+    <!--#message h1 {-->
+    <!--font-size: 22px;-->
+    <!--font-weight: 300;-->
+    <!--color: rgba(0, 0, 0, 0.6);-->
+    <!--margin: 0 0 16px;-->
+    <!--}-->
 
-        #message a {
-            display: block;
-            text-align: center;
-            background: #039be5;
-            text-transform: uppercase;
-            text-decoration: none;
-            color: white;
-            padding: 16px;
-            border-radius: 4px;
-        }
+    <!--#message p {-->
+    <!--line-height: 140%;-->
+    <!--margin: 16px 0 24px;-->
+    <!--font-size: 14px;-->
+    <!--}-->
 
-        #message,
-        #message a {
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-        }
+    <!--#message a {-->
+    <!--display: block;-->
+    <!--text-align: center;-->
+    <!--background: #039be5;-->
+    <!--text-transform: uppercase;-->
+    <!--text-decoration: none;-->
+    <!--color: white;-->
+    <!--padding: 16px;-->
+    <!--border-radius: 4px;-->
+    <!--}-->
 
-        #load {
-            color: rgba(0, 0, 0, 0.4);
-            text-align: center;
-            font-size: 13px;
-        }
+    <!--#message,-->
+    <!--#message a {-->
+    <!--box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);-->
+    <!--}-->
 
-        @media (max-width: 600px) {
-            body,
-            #message {
-                margin-top: 0;
-                background: white;
-                box-shadow: none;
-            }
+    <!--#load {-->
+    <!--color: rgba(0, 0, 0, 0.4);-->
+    <!--text-align: center;-->
+    <!--font-size: 13px;-->
+    <!--}-->
 
-            body {
-                border-top: 16px solid #ffa100;
-            }
-        }
-    </style>
+    <!--@media (max-width: 600px) {-->
+    <!--body,-->
+    <!--#message {-->
+    <!--margin-top: 0;-->
+    <!--background: white;-->
+    <!--box-shadow: none;-->
+    <!--}-->
+    <!--}-->
+    <!--</style>-->
 </head>
 
 <body>
-    <div data-role="page" id="login" class="page">
+<script>
+    document.body.addEventListener('touchmove', function (event) {
+        console.log(event.source);
+        //if (event.source == document.body)
+        event.preventDefault();
+    }, false);
 
-        <div role="main" class="ui-content login-form">
-            <h1 class="logo-text">DZIDR</h1>
+    window.onresize = function () {
+        $(document.body).width(window.innerWidth).height(window.innerHeight);
+    }
 
-            <input type="text" name="username" id="username" value="" placeholder="@User Name">
-            <input type="password" name="password" id="password" value="" autocomplete="off" placeholder="Password">
-            <a href="#get-code" class="ui-btn login-btn">Login</a>
+    $(function () {
+        window.onresize();
+    });
+</script>
 
-            <div class="ui-nodisc-icon ui-alt-icon split-btn-wrapper">
-                <!-- Classes added to the wrapper -->
+<div data-role="page" id="login" class="page">
 
-                <a class="ui-btn ui-corner-all ui-icon-carat-d ui-btn-icon-notext ui-btn-inline split-btn"></a>
-            </div>
+    <div role="main" class="login-form">
+        <h1 class="logo-text">DZIDR</h1>
+
+        <input type="text" name="username" id="username" value="" placeholder="@User Name">
+        <input type="password" name="password" id="password" value="" autocomplete="off" placeholder="Password">
+        <a href="#get-code" class="ui-btn login-btn">Login</a>
+
+        <div class="ui-nodisc-icon ui-alt-icon split-btn-wrapper">
+            <!-- Classes added to the wrapper -->
+
+            <a class="ui-btn ui-corner-all ui-icon-carat-d ui-btn-icon-notext ui-btn-inline split-btn"></a>
         </div>
-        <!-- /content -->
+    </div>
+    <!-- /content -->
 
-        <div role="second" class="ui-content external-login-form">
-            <button class="ui-btn facebook-login-btn">Login with Facebook</button>
-            <button class="ui-btn twitter-login-btn">Login with Twitter</button>
-        </div>
+    <div role="second" class="external-login-form">
+        <button class="ui-btn facebook-login-btn">Login with Facebook</button>
+        <button class="ui-btn twitter-login-btn">Login with Twitter</button>
+    </div>
 
-        <div role="footer" class="ui-content login-footer">
-            <p class="create-account-link">Create an account</p>
-            <small class="forget-password-link">Forget password?</small>
+    <div role="footer" class="login-footer">
+        <p class="create-account-link">Create an account</p>
+        <small class="forget-password-link">Forget password?</small>
+    </div>
+</div>
+
+<div data-role="page" id="get-code" class="page with-bg">
+    <div data-role="header" class="page-header">
+        <div class="ui-btn-right right-btn-group">
+            <a class="ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext ui-btn-inline head-bar-btn"></a>
         </div>
     </div>
 
-    <div data-role="page" id="get-code" class="page with-bg">
+    <div role="main" class="ui-content">
+        <h1 class="logo-text">DZIDR</h1>
+        <ul class="spot-list">
+        </ul>
 
-        <div role="main" class="ui-content">
-            <h1 class="logo-text">DZIDR</h1>
-            <ul class="spot-list">
+        <div class="ui-nodisc-icon ui-alt-icon split-btn-wrapper add-new-spot-btn">
+            <!-- Classes added to the wrapper -->
+
+            <input type="text" name="username" id="list-code" value="" placeholder="List Code">
+            <a class="ui-btn login-btn fetch-code-btn">Fetch</a>
+        </div>
+
+        <hr>
+        <h2 class="not-found-message" style="display: none;">CodeList not found! Please try another.</h2>
+    </div>
+    <!-- /content -->
+</div>
+
+<div data-role="page" id="horse-list" class="page with-color-bg">
+
+    <!--<div data-role="panel" id="navPanel">-->
+    <!--<h2>Filter</h2>-->
+    <!--<form class="ui-filterable">-->
+    <!--<input id="horseFilter" data-type="search">-->
+    <!--</form>-->
+    <!--<form method="post" action="demoform.asp">-->
+    <!--<fieldset>-->
+    <!--<label for="sex">Sex:</label>-->
+    <!--<select name="sex" id="sex" multiple="multiple" data-native-menu="false">-->
+    <!--<option></option>-->
+    <!--<option value="gelding">Gelding</option>-->
+    <!--<option value="mare">Mare</option>-->
+    <!--<option value="stallion">Stallion</option>-->
+    <!--</select>-->
+    <!--</fieldset>-->
+    <!--<fieldset>-->
+    <!--<label for="age">Age:</label>-->
+    <!--<select name="age" id="age" multiple="multiple" data-native-menu="false">-->
+    <!--<option></option>-->
+    <!--<option value="4 years">4 years</option>-->
+    <!--<option value="5 years">5 years</option>-->
+    <!--<option value="6 years">6 years</option>-->
+    <!--<option value="7 years">7 years</option>-->
+    <!--<option value="8-10 years">8-10 years</option>-->
+    <!--<option value="11+ years">11+ years</option>-->
+    <!--</select>-->
+    <!--</fieldset>-->
+    <!--<fieldset>-->
+    <!--<label for="pedigree">Pedigree:</label>-->
+    <!--<select name="pedigree-F" id="pedigree-F">-->
+    <!--</select>-->
+    <!--<select name="pedigree-MF" id="pedigree-MF">-->
+    <!--</select>-->
+    <!--</fieldset>-->
+    <!--<input type="submit" data-inline="true" value="Submit">-->
+    <!--</form>-->
+    <!--</div>-->
+    <div data-role="header" class="page-header">
+        <a href="#navPanel"
+           class="ui-btn ui-btn-left ui-corner-all ui-icon-bars ui-btn-icon-notext ui-btn-inline head-bar-btn"></a>
+        <div class="ui-btn-right right-btn-group">
+            <a href="#get-code"
+               class="ui-btn ui-corner-all ui-icon-recycle ui-btn-icon-notext ui-btn-inline head-bar-btn"></a>
+            <a class="ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext ui-btn-inline head-bar-btn"></a>
+        </div>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <ul class="horse-list" data-filter="true">
+
+        </ul>
+    </div>
+    <!-- /content -->
+
+
+    <div data-role="footer" class="page-footer">
+        <div data-role="navbar" data-iconpos="bottom">
+            <ul>
+                <li>
+                    <a href="#compare-list" data-icon="eye"></a>
+                </li>
+                <li>
+                    <a href="#horse-list" data-icon="bullets"></a>
+                </li>
+                <li>
+                    <a href="#personal-list" data-icon="heart"></a>
+                </li>
             </ul>
-
-            <div class="ui-nodisc-icon ui-alt-icon split-btn-wrapper add-new-spot-btn">
-                <!-- Classes added to the wrapper -->
-
-                <input type="text" name="username" id="list-code" value="" placeholder="List Code">
-                <a href="#horse-list" class="ui-btn login-btn">Login</a>
-            </div>
         </div>
-        <!-- /content -->
+    </div>
+</div>
+
+<div data-role="page" id="rating" class="page with-color-bg">
+    <div data-role="header" class="page-header">
+        <a href="#navPanel"
+           class="ui-btn ui-btn-left ui-corner-all ui-icon-bars ui-btn-icon-notext ui-btn-inline head-bar-btn"></a>
+        <div class="ui-btn-right right-btn-group">
+            <a href="#get-code"
+               class="ui-btn ui-corner-all ui-icon-recycle ui-btn-icon-notext ui-btn-inline head-bar-btn"></a>
+            <a class="ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext ui-btn-inline head-bar-btn"></a>
+        </div>
     </div>
 
-    <div data-role="page" id="horse-list" class="page with-bg">
+    <div data-role="main" class="ui-content">
+        <div class="spot-info">
+            <img class="spot-info-img">
+            </img>
 
-        <div data-role="panel" id="navPanel">
-            <h2>Filter</h2>
-            <form class="ui-filterable">
-                    <input id="horseFilter" data-type="search">
-                </form>
-                    <form method="post" action="demoform.asp">
-                            <fieldset>
-                              <label for="sex">Sex:</label>
-                              <select name="sex" id="sex" multiple="multiple" data-native-menu="false">
-                                <option></option>
-                                <option value="gelding">Gelding</option>
-                                <option value="mare">Mare</option>
-                                <option value="stallion">Stallion</option>
-                              </select>
-                            </fieldset>
-                            <fieldset>
-                              <label for="age">Age:</label>
-                              <select name="age" id="age" multiple="multiple" data-native-menu="false">
-                                <option></option>
-                                <option value="4 years">4 years</option>
-                                <option value="5 years">5 years</option>
-                                <option value="6 years">6 years</option>
-                                <option value="7 years">7 years</option>
-                                <option value="8-10 years">8-10 years</option>
-                                <option value="11+ years">11+ years</option>
-                              </select>
-                            </fieldset>
-                            <fieldset>
-                                <label for="pedigree">Pedigree:</label>
-                              <select name="pedigree-F" id="pedigree-F">
-                                  </select>
-                                  <select name="pedigree-MF" id="pedigree-MF"> 
-                                    </select>
-                                </fieldset>
-                            <input type="submit" data-inline="true" value="Submit">
-                          </form>
-            
-            
+
+            <div class="spot-info-rate"> -.-</div>
+
+            <div class="ui-grid-a spot-info-detail">
+                <p class="ui-block-a">Name:</p>
+                <p class="ui-block-b spot-info-name"></p>
+
+                <p class="ui-block-a">F:</p>
+                <p class="ui-block-b spot-info-F"></p>
+
+                <p class="ui-block-a">MF:</p>
+                <p class="ui-block-b spot-info-MF"></p>
+
+                <p class="ui-block-a">Gender:</p>
+                <p class="ui-block-b spot-info-sex"></p>
+
+                <p class="ui-block-a">Age:</p>
+                <p class="ui-block-b spot-info-age"></p>
+            </div>
+
         </div>
-        <div data-role="header" class="page-header">
-            <a href="#navPanel"  class="ui-btn ui-btn-left ui-corner-all ui-icon-bars ui-btn-icon-notext ui-btn-inline head-bar-btn"></a>
-            <div class="ui-btn-right right-btn-group">
-                <a class="ui-btn ui-corner-all ui-icon-gear ui-btn-icon-notext ui-btn-inline head-bar-btn"></a>
-                <a class="ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext ui-btn-inline head-bar-btn"></a>
+
+        <div class="spot-rating">
+            <div class="ui-field-contain">
+                <label for="sex">Sex:</label>
+                <input type="range" name="sex" class="slider" id="rating-sex" min="0" max="5" data-highlight="true"
+                       value="1">
+            </div>
+            <div class="ui-field-contain">
+                <label for="pedigree">Pedigree:</label>
+                <input type="range" name="pedigree" class="slider" id="rating-pedigree" min="0" max="5"
+                       data-highlight="true">
+            </div>
+            <div class="ui-field-contain">
+                <label for="age">Age:</label>
+                <input type="range" name="age" class="slider" id="rating-age" min="0" max="5" data-highlight="true">
+            </div>
+            <div class="ui-field-contain">
+                <label for="color">Color:</label>
+                <input type="range" name="color" class="slider" id="rating-color" min="0" max="5" data-highlight="true">
+            </div>
+            <div class="ui-field-contain">
+                <label for="height">Height:</label>
+                <input type="range" name="height" class="slider" id="rating-height" min="0" max="5"
+                       data-highlight="true">
+            </div>
+            <div class="ui-field-contain">
+                <label for="rideability">Rideability:</label>
+                <input type="range" name="rideability" class="slider" id="rating-rideability" min="0" max="5"
+                       data-highlight="true">
+            </div>
+            <div class="ui-field-contain">
+                <label for="walk">Walk:</label>
+                <input type="range" name="walk" class="slider" id="rating-walk" min="0" max="5" data-highlight="true">
+            </div>
+            <div class="ui-field-contain">
+                <label for="trot">Trot:</label>
+                <input type="range" name="trot" class="slider" id="rating-trot" min="0" max="5" data-highlight="true">
+            </div>
+            <div class="ui-field-contain">
+                <label for="canter">Canter:</label>
+                <input type="range" name="canter" class="slider" id="rating-canter" min="0" max="5"
+                       data-highlight="true">
             </div>
         </div>
 
-        <div data-role="main" class="ui-content">
-            <ul class="horse-list" data-filter="true" data-input="#horseFilter" >
+        <div class="spot-note">
+            <label for="notes">Notes:</label>
+            <textarea name="notes" id="rating-notes"></textarea>
+        </div>
 
+        <fieldset class="ui-grid-a">
+            <div class="ui-block-a">
+                <button class="cancel-btn" data-theme="a">Cancel</button>
+            </div>
+            <div class="ui-block-b">
+                <button class="save-btn" data-theme="b">Submit</button>
+            </div>
+        </fieldset>
+    </div>
+
+    <div data-role="footer" class="page-footer">
+        <div data-role="navbar" data-iconpos="bottom">
+            <ul>
+                <li>
+                    <a href="#compare-list" data-icon="eye"></a>
+                </li>
+                <li>
+                    <a href="#horse-list" data-icon="bullets"></a>
+                </li>
+                <li>
+                    <a href="#personal-list" data-icon="heart"></a>
+                </li>
             </ul>
         </div>
-        <!-- /content -->
+    </div>
+</div>
 
-    
-        <div data-role="footer" class="page-footer">
-            <div data-role="navbar" data-iconpos="bottom">
-                <ul>
-                    <li>
-                        <a href="#" data-icon="eye"></a>
-                    </li>
-                    <li>
-                        <a href="#" data-icon="plus"></a>
-                    </li>
-                    <li>
-                        <a href="#" data-icon="bullets"></a>
-                    </li>
-                </ul>
-            </div>
+<div data-role="page" id="personal-list" class="page with-color-bg">
+    <div data-role="header" class="page-header">
+        <a href="#navPanel"
+           class="ui-btn ui-btn-left ui-corner-all ui-icon-bars ui-btn-icon-notext ui-btn-inline head-bar-btn"></a>
+        <div class="ui-btn-right right-btn-group">
+            <a href="#get-code"
+               class="ui-btn ui-corner-all ui-icon-recycle ui-btn-icon-notext ui-btn-inline head-bar-btn"></a>
+            <a class="ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext ui-btn-inline head-bar-btn"></a>
         </div>
     </div>
 
-    <div data-role="page" id="rating" class="page with-bg">
-        <div id="rating-page"></div>
-        <div id="rating-slider">
-                <div class="ui-field-contain">
-                    <label for="sex">Sex:</label>
-                    <input type="range" name="sex" class="slider" id="sex" min="0" max="5" data-highlight="true" value="1">
-                </div>
-                <div class="ui-field-contain">
-                    <label for="pedigree">Pedigree:</label>
-                    <input type="range" name="pedigree" class="slider" id="pedigree" min="0" max="5" data-highlight="true">
-                </div>
-                <div class="ui-field-contain">
-                    <label for="age">Age:</label>
-                    <input type="range" name="age" class="slider" id="age" min="0" max="5" data-highlight="true" >
-                </div>
-                <div class="ui-field-contain">
-                    <label for="color">Color:</label>
-                    <input type="range" name="color" class="slider" id="color" min="0" max="5" data-highlight="true" >
-                </div>
-                <div class="ui-field-contain">
-                    <label for="height">Height:</label>
-                    <input type="range" name="height" class="slider" id="height" min="0" max="5" data-highlight="true" >
-                </div>
-                <div class="ui-field-contain">
-                    <label for="rideability">Rideability:</label>
-                    <input type="range" name="rideability" class="slider" id="rideability" min="0" max="5" data-highlight="true" >
-                </div>
-                <div class="ui-field-contain">
-                    <label for="walk">Walk:</label>
-                    <input type="range" name="walk" class="slider" id="walk" min="0" max="5" data-highlight="true" >
-                </div>
-                <div class="ui-field-contain">
-                    <label for="trot">Trot:</label>
-                    <input type="range" name="trot" class="slider" id="trot" min="0" max="5" data-highlight="true" >
-                </div>
-                <div class="ui-field-contain">
-                    <label for="canter">Canter:</label>
-                    <input type="range" name="canter" class="slider" id="canter" min="0" max="5" data-highlight="true" >
-                </div>
-            </div>
+    <div data-role="main" class="ui-content">
+        <ul class="personal-list" data-filter="true">
 
-       
-        <div>
-             <label for="notes">Notes:</label>
-            <textarea name="notes" id="notes"></textarea>
+        </ul>
+    </div>
+    <!-- /content -->
+
+
+    <div data-role="footer" class="page-footer">
+        <div data-role="navbar" data-iconpos="bottom">
+            <ul>
+                <li>
+                    <a href="#compare-list" data-icon="eye"></a>
+                </li>
+                <li>
+                    <a href="#horse-list" data-icon="bullets"></a>
+                </li>
+                <li>
+                    <a href="#personal-list" data-icon="heart"></a>
+                </li>
+            </ul>
         </div>
-        
+    </div>
+</div>
+
+<div data-role="page" id="compare-list" class="page with-color-bg">
+    <div data-role="header" class="page-header">
+        <a href="#navPanel"
+           class="ui-btn ui-btn-left ui-corner-all ui-icon-bars ui-btn-icon-notext ui-btn-inline head-bar-btn"></a>
+        <div class="ui-btn-right right-btn-group">
+            <a href="#get-code"
+               class="ui-btn ui-corner-all ui-icon-recycle ui-btn-icon-notext ui-btn-inline head-bar-btn"></a>
+            <a class="ui-btn ui-corner-all ui-icon-user ui-btn-icon-notext ui-btn-inline head-bar-btn"></a>
+        </div>
     </div>
 
+    <div data-role="main" class="ui-content">
+        <table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke">
+            <thead>
+                <tr>
+                    <th>Horse</th>
+                    <th>Total</th>
+                    <th data-priority="1">Sex</th>
+                    <th data-priority="1">Age</th>
+                    <th data-priority="2">Pedigree</th>
+                    <th data-priority="1">Color</th>
+                    <th data-priority="3">Height</th>
+                    <th data-priority="1">Ride</th>
+                    <th data-priority="4">Walk</th>
+                    <th data-priority="5">Trot</th>
+                    <th data-priority="5">Canter</th>
+                </tr>
+            </thead>
+            <tbody class="compare-table-tbody">
+                <!--<tr>-->
+                    <!--<th>1</th>-->
+                    <!--<th>1</th>-->
+                    <!--<th>1</th>-->
+                    <!--<th>1</th>-->
+                    <!--<th>1</th>-->
+                    <!--<th>1</th>-->
+                    <!--<th>1</th>-->
+                    <!--<th>1</th>-->
+                    <!--<th>1</th>-->
+                    <!--<th>1</th>-->
+                    <!--<th>1</th>-->
+                <!--</tr>-->
+            </tbody>
+        </table>
+    </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-            // // The Firebase SDK is initialized and available here!
-            //
-            // firebase.auth().onAuthStateChanged(user => { });
-            // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-            // firebase.messaging().requestPermission().then(() => { });
-            // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-            //
-            // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+    <div data-role="footer" class="page-footer">
+        <div data-role="navbar" data-iconpos="bottom">
+            <ul>
+                <li>
+                    <a href="#compare-list" data-icon="eye"></a>
+                </li>
+                <li>
+                    <a href="#horse-list" data-icon="bullets"></a>
+                </li>
+                <li>
+                    <a href="#personal-list" data-icon="heart"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 
-            try {
-                let app = firebase.app();
-                let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[
-                    feature] === 'function');
-
-            } catch (e) {
-                console.error(e);
-            }
-        });
-    </script>
-    <script src="js/app.js"></script>
+<script src="js/app.js"></script>
 </body>
 
 </html>

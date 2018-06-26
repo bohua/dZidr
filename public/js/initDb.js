@@ -6,80 +6,80 @@ db.settings(settings);
 var horseList = [
     {
         name: 'Ascenzione',
-        F: 'F: Zack',
-        MF: 'MF: Don Schufro',
+        F: 'Zack',
+        MF: 'Don Schufro',
         sex: 'Mare',
         age: '5 years',
         img: "../images/ascenzione.jpg"
     },
     {
         name: 'Captain Fleurop',
-        F: 'F: Captain Fire',
-        MF: 'MF: Fleurop',
+        F: 'Captain Fire',
+        MF: 'Fleurop',
         sex: 'Gelding',
         age: '9 years',
         img: "../images/captain-fleurop.jpg"
     },
     {
         name: 'Chicago',
-        F: 'F: Ciacomini',
-        MF: 'MF: Carthago',
+        F: 'Ciacomini',
+        MF: 'Carthago',
         sex: 'Gelding',
         age: '10 years',
         img: "../images/chicago.jpg"
     },
     {
         name: 'Clark',
-        F: 'F: Consul',
-        MF: 'MF: Come Back II',
+        F: 'Consul',
+        MF: 'Come Back II',
         sex: 'Stallion',
         age: '13 years',
         img: "../images/clark.jpg"
     },
     {
         name: 'Davinci',
-        F: 'F: Dancier',
-        MF: 'MF: Londontime',
+        F: 'Dancier',
+        MF: 'Londontime',
         sex: 'Gelding',
         age: '5 years',
         img: "../images/davinci.jpg"
     },
     {
         name: 'Djamaica',
-        F: 'F: Damon Hill',
-        MF: 'MF: Sandro Hit',
+        F: 'Damon Hill',
+        MF: 'Sandro Hit',
         sex: 'Mare',
         age: '6 years',
         img: "../images/djamaica.jpg"
     },
     {
         name: 'Fascinate',
-        F: 'S: Fürstenball',
-        MF: 'DS: Dacaprio',
+        F: 'Fürstenball',
+        MF: 'Dacaprio',
         sex: 'Mare',
         age: '5 years',
         img: "../images/fascinate.jpg"
     },
     {
         name: 'Fellini',
-        F: 'F: Ampere',
-        MF: 'MF: Jazz',
+        F: 'Ampere',
+        MF: 'Jazz',
         sex: 'Gelding',
         age: '8 years',
         img: "../images/fellini.jpg"
     },
     {
         name: 'Florentina',
-        F: 'F: For Romance',
-        MF: 'MF: Sandro Hit',
+        F: 'For Romance',
+        MF: 'Sandro Hit',
         sex: 'Mare',
         age: '5 years',
         img: "../images/florentina.jpg"
     },
     {
         name: 'Fraulein Hansemann',
-        F: 'F: Floriscount',
-        MF: 'MF: Weltmeyer',
+        F: 'Floriscount',
+        MF: 'Weltmeyer',
         sex: 'Mare',
         age: '7 years',
         img: "../images/fraulein-hansemann.jpg"

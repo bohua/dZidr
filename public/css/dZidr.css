@@ -1,5 +1,30 @@
+html,body {
+    box-sizing: border-box;
+}
+*, *:before, *:after { box-sizing: inherit; }
+
+/* Set full height: http://stackoverflow.com/questions/6654958/make-body-have-100-of-the-browser-height */
+html {
+    /* body will set it's height based on its parent, which is html */
+    height: 100%;
+
+    /* set full width as well */
+    width: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+}
 body {
-    overflow-y: hidden;
+    /* min-height is needed for pages that might scroll, ie they may contain _more_ than 100% of viewport height */
+    min-height: 100%;
+
+    /* needed to prevent unwanted scroll-bars */
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -24,9 +49,14 @@ a {
     z-index: 0;
 }
 
+.page.with-color-bg{
+    background-color: #f9f9f9;
+    z-index: 0;
+}
+
 #login .login-form {
     padding: 20px 50px 50px 50px;
-    height: 240px;
+    height: 310px;
     background-image: url(../images/bg.jpg);
     background-size: cover;
     overflow: visible;
@@ -132,9 +162,9 @@ a {
 .page-header {
     height: 50px;
     width: 100%;
-    background-image: url(../images/bg.jpg);
-    opacity: 0.5;
-    filter: alpha(opacity=50); /* For IE8 and earlier */
+
+    background-color: #333!important;
+    opacity: 1;
 }
 
 #navPanel {
@@ -168,24 +198,26 @@ a {
 }
 
 .card .img-card {
-
     width: auto;
     height: auto;
     max-width: 15em !important;
     max-height: 6em !important;
-
 }
 
 option {
     font-size: 10px;
 }
 
-#horse-list .ui-panel-wrapper {
+.ui-panel-wrapper {
     height: 100%;
 }
 
-#horse-list .ui-content {
-    height: calc(100% - 120px);
+.ui-content {
+    height: calc(100% - 90px);
+}
+
+.page-footer .ui-btn-icon-bottom:after {
+    background-color: rgba(0,0,0,0) ;
 }
 
 /* CSS Loading bar start */
@@ -229,6 +261,122 @@ option {
     padding-left: calc(50% - 60px);
     padding-top: calc(50% + 10px);
 }
+#personal-list .personal-list,
+#horse-list .horse-list{
+    height: calc(100% - 34px);
+    overflow: scroll;
+}
 
 /* CSS Loading bar end */
 
+#rating .spot-info-img{
+    width: 100%;
+    margin-bottom: 10px;
+    border: 2px solid #666;
+}
+
+#rating .spot-info{
+    background: #eee;
+    padding: 10px 20px 0px 20px;
+    margin-top: 10px;
+    border: 2px solid #ddd;
+}
+
+#rating .spot-info-detail{
+}
+
+#rating .spot-info-rate{
+    float: right;
+    font-size: 50px;
+    font-weight: bold;
+    color: #3498DB;
+    padding-left: 10px;
+    padding-top: 50px;
+    padding-right: 10px;
+    padding-bottom: 61px;
+    border: 1px solid #ddd;
+    background: #fff;
+}
+
+#rating .spot-info .ui-block-a{
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: right;
+    padding: 5px 10px 5px 5px;
+    width: 70px;
+}
+
+#rating .spot-info .ui-block-b{
+    padding-left: 20px;
+    background: #fff;
+    padding: 5px;
+    border: 1px solid #ddd;
+    width: calc(100% - 80px);
+}
+
+#rating .spot-rating{
+    background: #fff;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: 2px solid #ddd;
+}
+
+#rating .spot-note{
+    background: #fff;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: 2px solid #ddd;
+}
+
+#rating .save-btn{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background: #3498DB;
+    border: 2px solid #ddd;
+    border-left: 1px solid #ddd;
+    text-shadow: none;
+    box-shadow: none;
+}
+
+#rating .cancel-btn{
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border: 2px solid #ddd;
+    border-right: 1px solid #ddd;
+    text-shadow: none;
+    box-shadow: none;
+}
+
+#compare-list td.best{
+    color: white;
+    background: #1ABC9C;
+}
+
+#compare-list td.best-sub{
+    color: white;
+    background: #A3E4D7;
+}
+
+#compare-list td.better{
+    color: white;
+    background: #3498DB;
+}
+
+#compare-list td.better-sub{
+    color: white;
+    background: #AED6F1;
+}
+
+#compare-list td.good{
+    color: white;
+    background: #C0392B;
+}
+
+#compare-list td.good-sub{
+    color: white;
+    background: #E6B0AA;
+}
+
+#table-column-toggle{
+    text-shadow: none;
+}
