@@ -364,12 +364,12 @@ option {
 
 #compare-list td.better-sub{
     color: white;
-    background: #AED6F1;
+    background: #F5CBA7;
 }
 
 #compare-list td.good{
     color: white;
-    background: #C0392B;
+    background: #E67E22;
 }
 
 #compare-list td.good-sub{

@@ -236,6 +236,10 @@ $("#personal-list").on("pagebeforeshow", function (event) {
         firestore.collection("ratings").get().then((ratings) => {
             var count = 0;
 
+            if(ratings.docs.length == 0){
+                loadingMask(false);
+            }
+
             ratings.forEach((doc) => {
                 let rate = doc.data();
 
@@ -286,8 +290,14 @@ $("#compare-list").on("pagebeforeshow", function (event) {
 
     loadingMask(true, '#compare-list .ui-content');
 
+    compareTable.empty();
+
     firestore.collection("ratings").get().then((ratings) => {
         var count = 0;
+
+        if(ratings.docs.length == 0){
+            loadingMask(false);
+        }
 
         ratings.forEach((doc) => {
             let rate = doc.data();
