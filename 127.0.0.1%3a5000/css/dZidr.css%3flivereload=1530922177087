@@ -37,7 +37,12 @@ a {
     color: #ffffff;
     text-align: center;
 }
-
+.not-found-message {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    text-align: center;
+    text-transform: capitalize;
+}
 .page {
     height: 100%;
     overflow: hidden;
