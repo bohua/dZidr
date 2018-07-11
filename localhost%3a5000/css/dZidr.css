@@ -23,9 +23,8 @@ body {
     /* needed to prevent unwanted scroll-bars */
     margin: 0;
     padding: 0;
-
     overflow: hidden;
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font: 14px "Roboto", Helvetica, Arial, sans-serif;
     color: red;
 }
 
@@ -153,7 +152,7 @@ a {
 }
 
 .page-footer a {
-    background-color: #333333 !important;
+    background-color: #bdbdbd !important;
 }
 
 .page-footer a.ui-btn-active {
@@ -161,10 +160,9 @@ a {
 }
 
 .page-header {
-    height: 50px;
+    height: 60px;
     width: 100%;
-
-    background-color: #333!important;
+    background-color: #f9f9f9!important;
     opacity: 1;
 }
 
@@ -191,7 +189,7 @@ a {
     margin-top: -18px;
     width: 35px;
     height: 35px;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: #BDBDBD;
 }
 
 .ui-content {
@@ -271,16 +269,18 @@ option {
 /* CSS Loading bar end */
 
 #rating .spot-info-img{
-    width: 100%;
+    width: 75%;
     margin-bottom: 10px;
-    border: 2px solid #666;
+    border: none;
 }
 
 #rating .spot-info{
-    background: #eee;
+    background: rgba(0,0,0,0);
     padding: 10px 20px 0px 20px;
     margin-top: 10px;
-    border: 2px solid #ddd;
+    border: 2px solid;
+    border-radius: 15px;
+    border-color: #ddd;
 }
 
 #rating .spot-info-detail{
@@ -290,21 +290,24 @@ option {
     float: right;
     font-size: 50px;
     font-weight: bold;
-    color: #3498DB;
+    color: #009688;
+    margin-left: 17px;
     padding-left: 10px;
-    padding-top: 50px;
+    padding-top: 83px;
     padding-right: 10px;
-    padding-bottom: 61px;
-    border: 1px solid #ddd;
-    background: #fff;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    background: #FAFAFA;
 }
 
 #rating .spot-info .ui-block-a{
-    font-weight: bold;
+    font-weight: 400;
+    text-transform: uppercase;
     margin-bottom: 10px;
-    text-align: right;
+    text-align: left;
     padding: 5px 10px 5px 5px;
     width: 70px;
+    color: #dddesd;
 }
 
 #rating .spot-info .ui-block-b{
@@ -316,23 +319,27 @@ option {
 }
 
 #rating .spot-rating{
-    background: #fff;
+    background: #f9f9f9;
     margin-top: 10px;
-    padding: 5px 10px;
-    border: 2px solid #ddd;
+    padding: 5px 20px;
+    border: 2px solid;
+    border-color: #ddd;
+    border-radius: 15px;
 }
 
 #rating .spot-note{
-    background: #fff;
+    background: #FAFAFA;
     margin-top: 10px;
     padding: 5px 10px;
-    border: 2px solid #ddd;
+    /* border: 2px solid #ddd; */
+    /* border-color: #ddd; */
+    border-radius: 15px;
 }
 
 #rating .save-btn{
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    background: #3498DB;
+    background: #009688;
     border: 2px solid #ddd;
     border-left: 1px solid #ddd;
     text-shadow: none;

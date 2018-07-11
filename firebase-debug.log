@@ -1,0 +1,32 @@
+[debug] [2018-07-10T23:49:12.248Z] ----------------------------------------------------------------------
+[debug] [2018-07-10T23:49:12.250Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve --only hosting
+[debug] [2018-07-10T23:49:12.250Z] CLI Version:   3.19.3
+[debug] [2018-07-10T23:49:12.250Z] Platform:      darwin
+[debug] [2018-07-10T23:49:12.250Z] Node Version:  v10.0.0
+[debug] [2018-07-10T23:49:12.250Z] Time:          Wed Jul 11 2018 01:49:12 GMT+0200 (CEST)
+[debug] [2018-07-10T23:49:12.250Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-07-10T23:49:12.262Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-07-10T23:49:12.262Z] > authorizing via signed-in user
+[debug] [2018-07-10T23:49:12.264Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/spot-2c63e  
+  
+ Wed Jul 11 2018 01:49:12 GMT+0200 (CEST)
+[debug] [2018-07-10T23:49:13.021Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-10T23:49:13.022Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/spot-2c63e/tokens  
+  
+ Wed Jul 11 2018 01:49:13 GMT+0200 (CEST)
+[debug] [2018-07-10T23:49:13.758Z] <<< HTTP RESPONSE 200
+[debug] [2018-07-10T23:49:13.759Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/spot-2c63e  
+  
+ Wed Jul 11 2018 01:49:13 GMT+0200 (CEST)
+[debug] [2018-07-10T23:49:14.725Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/daudballing/WebstormProjects/dZidr-new'...
+[info] 
+[debug] [2018-07-10T23:49:14.727Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/47936778003/clients/_:getWebAppConfig  
+  
+ Wed Jul 11 2018 01:49:14 GMT+0200 (CEST)
+[debug] [2018-07-10T23:49:15.350Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] ✔  hosting: Local server: http://localhost:5000
+
